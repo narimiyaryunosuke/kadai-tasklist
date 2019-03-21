@@ -25,7 +25,7 @@ class SessionsController < ApplicationController
   
     
   def login(email, password)
-    @task = Task.find_by(email: email)
+    @task = Task.find_by(emails: email)
     if @task && @task.authenticate(password)
       # ログイン成功
       session[:user_id] = @task.id
